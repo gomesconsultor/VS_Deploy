@@ -1,6 +1,22 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Privacy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Menssage"]</h3>
+
+<p><strong>CommandLine:</strong> @System.Environment.CommandLine</p>
+<p>
+    <strong>CurrentDirectory:</strong>  @System.Environment.CurrentDirectory
+</p>
+<p>
+    <strong>OSVersion:</strong>   @System.Environment.OSVersion
+</p>
+<p>
+    <strong>MachineName:</strong>
+    @System.Environment.MachineName
+</p>
+<p>
+    <strong>UserName:</strong>
+    @System.Environment.UserName
+</p>
