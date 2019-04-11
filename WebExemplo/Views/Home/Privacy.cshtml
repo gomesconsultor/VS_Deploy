@@ -20,7 +20,8 @@
         <strong>UserName:</strong>
         @System.Environment.UserName
     </p>
-
+   <p style="color:red"><strong>Plattform:</strong> @System.Environment.OSVersion.Platform</p>
+   <p style="color:red"><strong>VersionString:</strong> @System.Environment.OSVersion.VersionString</p>
     <h1>Alunos</h1>
         @foreach (var aluno in Model)
         {
