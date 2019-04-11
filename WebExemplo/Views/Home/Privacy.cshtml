@@ -1,22 +1,30 @@
-﻿@{
-    ViewData["Title"] = "Privacy";
-}
+﻿
+    @{
+        ViewData["Title"] = "Privacy";
+    }
+    <h2>@ViewData["Title"]</h2>
+    <h3>@ViewData["Menssage"]</h3>
 
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Menssage"]</h3>
+    <p><strong>CommandLine:</strong> @System.Environment.CommandLine</p>
+    <p>
+        <strong>CurrentDirectory:</strong>  @System.Environment.CurrentDirectory
+    </p>
+    <p>
+        <strong>OSVersion:</strong>   @System.Environment.OSVersion
+    </p>
+    <p>
+        <strong>MachineName:</strong>
+        @System.Environment.MachineName
+    </p>
+    <p>
+        <strong>UserName:</strong>
+        @System.Environment.UserName
+    </p>
 
-<p><strong>CommandLine:</strong> @System.Environment.CommandLine</p>
-<p>
-    <strong>CurrentDirectory:</strong>  @System.Environment.CurrentDirectory
-</p>
-<p>
-    <strong>OSVersion:</strong>   @System.Environment.OSVersion
-</p>
-<p>
-    <strong>MachineName:</strong>
-    @System.Environment.MachineName
-</p>
-<p>
-    <strong>UserName:</strong>
-    @System.Environment.UserName
-</p>
+    <h1>Alunos</h1>
+        @foreach (var aluno in Model)
+        {
+            <p>@aluno.Nome / @aluno.Idade </p>
+
+        }
+

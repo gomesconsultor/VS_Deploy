@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MongoDB.Driver;
 
 namespace WebExemplo
 {
@@ -30,7 +31,11 @@ namespace WebExemplo
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
-
+            services.AddScoped((sp) =>
+            {
+                var mongoDbConectionString = this.Configuration.GetSection("Connections").GetValue<string>("MongoDB");
+                return new MongoDB.Driver.MongoClient(mongoDbConectionString);
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
